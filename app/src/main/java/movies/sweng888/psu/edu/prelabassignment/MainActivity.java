@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mButtonCancel = (Button) findViewById(R.id.button_cancel);
         mButtonConfirm.setOnClickListener(this);
         mButtonCancel.setOnClickListener(this);
-
     }
 
     @Override

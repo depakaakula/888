@@ -66,7 +66,7 @@ public abstract class SecondActivity extends AppCompatActivity implements View.O
                         REQUEST_IMAGE_CAPTURE);
             } else {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(cameraIntent, MY_CAMERA_PERMISSION_CODE);
+                startActivityForResult(cameraIntent, MY_CAMERA_PERMISSION_CODE);
             }
         }
     }

@@ -19,7 +19,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.DIAL"/>
                 <action android:name="android.hardware.camera"/>
-                        android:required="true" />
+                android:required="true" />
             </intent-filter>
         </activity>
     </application>
