@@ -72,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(RegisterActivity.this, "Authenticated.",
+                            Toast.makeText(RegisterActivity.this, "In-progress.",
                                     Toast.LENGTH_SHORT).show();
                         }
 
@@ -197,7 +197,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(RegisterActivity.this, "registered successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "In-progress", Toast.LENGTH_SHORT).show();
 
                         }else {
                             Toast.makeText(RegisterActivity.this, "could not register, try again", Toast.LENGTH_SHORT).show();
