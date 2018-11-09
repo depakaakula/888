@@ -1,6 +1,7 @@
 package assignment2.sweng888.psu.edu.loginregister.activities;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
@@ -9,7 +10,16 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthProvider;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import assignment2.sweng888.psu.edu.loginregister.R;
 import assignment2.sweng888.psu.edu.loginregister.helpers.InputValidation;
@@ -22,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private final AppCompatActivity activity = RegisterActivity.this;
 
     private NestedScrollView nestedScrollView;
-
+    private FirebaseAuth firebaseAuth;
     private TextInputLayout textInputLayoutName;
     private TextInputLayout textInputLayoutEmail;
     private TextInputLayout textInputLayoutPhone;
@@ -41,17 +51,42 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private InputValidation inputValidation;
     private DatabaseHelper databaseHelper;
     private User user;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
+        textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
+        mAuth = FirebaseAuth.getInstance();
+        mAuth.createUserWithEmailAndPassword(String.valueOf(textInputEditTextPassword),String.valueOf(textInputEditTextPassword))
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("TAG", "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("TAG", "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(RegisterActivity.this, "Authenticated.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+                        // ...
+                    }
+                });
         getSupportActionBar().hide();
 
         initViews();
         initListeners();
         initObjects();
     }
+
+
 
     /**
      * This method is to initialize views
@@ -94,6 +129,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         databaseHelper = new DatabaseHelper(activity);
         user = new User();
 
+
     }
 
 
@@ -102,6 +138,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      *
      * @param v
      */
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -155,9 +192,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             Snackbar.make(nestedScrollView, getString(R.string.error_email_exists), Snackbar.LENGTH_LONG).show();
         }
 
+        firebaseAuth.createUserWithEmailAndPassword(String.valueOf(textInputEditTextEmail), String.valueOf(textInputEditTextPassword))
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(RegisterActivity.this, "registered successfully", Toast.LENGTH_SHORT).show();
+
+                        }else {
+                            Toast.makeText(RegisterActivity.this, "could not register, try again", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
     }
-
     /**
      * This method is to empty all input edit text
      */
@@ -167,4 +215,5 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         textInputEditTextPassword.setText(null);
         textInputEditTextConfirmPassword.setText(null);
     }
+
 }

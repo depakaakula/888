@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "708130978379",
+    "firebase_url": "https://androiduiandlogin-deepak.firebaseio.com",
+    "project_id": "androiduiandlogin-deepak",
+    "storage_bucket": "androiduiandlogin-deepak.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708130978379:android:5ab97657037acd30",
+        "android_client_info": {
+          "package_name": "com.androidtutorialshub.loginregister"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708130978379-jpicm5lsmbm9ijpq4qnup6ir19vqp2of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBr4cuiX8bBENJQJBDdKbMkdry7FrGNmU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
