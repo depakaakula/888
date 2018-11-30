@@ -1,0 +1,117 @@
+{
+  "project_info": {
+    "project_number": "160698478452",
+    "firebase_url": "https://uiandmaps-4d022.firebaseio.com",
+    "project_id": "uiandmaps-4d022",
+    "storage_bucket": "uiandmaps-4d022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160698478452:android:3c7b558104c77431",
+        "android_client_info": {
+          "package_name": "mc.sweng888.psu.edu.mapsandbroadcast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160698478452-eqj7ke76udcmb6hcluhv6f8uqu8rmo5c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mc.sweng888.psu.edu.mapsandbroadcast",
+            "certificate_hash": "dd17a12ce7247e3686338f5fa4c875abbccdaf2a"
+          }
+        },
+        {
+          "client_id": "160698478452-ad6edhq5qf516u3icf4tmi1n1mq95hmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCACz4ZKqb-GgER-V1YjM-fAMMe1BRm_PU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160698478452-ad6edhq5qf516u3icf4tmi1n1mq95hmu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160698478452:android:ae39f27a7c401173",
+        "android_client_info": {
+          "package_name": "mc.sweng888.psu.edu.newmapsexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160698478452-ad6edhq5qf516u3icf4tmi1n1mq95hmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCACz4ZKqb-GgER-V1YjM-fAMMe1BRm_PU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160698478452:android:1de83c514150e82b",
+        "android_client_info": {
+          "package_name": "mc.sweng888.psu.edu.uiandmaps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160698478452-ad6edhq5qf516u3icf4tmi1n1mq95hmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCACz4ZKqb-GgER-V1YjM-fAMMe1BRm_PU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
